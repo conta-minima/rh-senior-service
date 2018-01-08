@@ -55,7 +55,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>ad-auth-service</finalName>
+		<finalName>rh-senior-service</finalName>
 	</build>
 
 	<repositories>
