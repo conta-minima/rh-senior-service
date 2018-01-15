@@ -11,7 +11,6 @@ public class ColaboradorDTO {
     
 	private Boolean ativo;
 	
-	private String senha;
 	private String pabx;
 	private String cargo;
 	private String cpf;
@@ -19,8 +18,7 @@ public class ColaboradorDTO {
 	@Override
 	public String toString() {
 		return "ColaboradorDTO [nome=" + nome + ", matricula=" + matricula + ", empresa=" + empresa + ", unidade="
-				+ unidade + ", setor=" + setor + ", email=" + email + ", ativo=" + ativo + ", senha=" + senha
-				+ ", pabx=" + pabx + ", cargo=" + cargo + ", cpf=" + cpf + "]";
+				+ unidade + ", setor=" + setor + ", email=" + email + ", ativo=" + ativo + ", pabx=" + pabx + ", cargo=" + cargo + ", cpf=" + cpf + "]";
 	}
 	
 	public String getNome() {
@@ -64,12 +62,6 @@ public class ColaboradorDTO {
 	}
 	public void setAtivo(Boolean ativo) {
 		this.ativo = ativo;
-	}
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
 	}
 	public String getPabx() {
 		return pabx;
