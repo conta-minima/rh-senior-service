@@ -4,6 +4,8 @@ public class Empresa {
 
     public static final String TABELA = "R030EMP";
     public static final String CAMPOS = "NOMEMP, NUMEMP";
+    public static final String CAMPO_NOMEMP = "NOMEMP";
+    public static final String CAMPO_NUMEMP = "NUMEMP";
 
     private String numemp;
     private String nomemp;

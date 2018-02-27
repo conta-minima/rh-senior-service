@@ -4,6 +4,9 @@ public class Setor {
 
     public static final String TABELA = "R016ORN";
     public static final String CAMPOS = "NOMLOC,NUMLOC,TABORG";
+    public static final String CAMPO_NOMLOC = "NOMLOC";
+    public static final String CAMPO_NUMLOC = "NUMLOC";
+    public static final String CAMPO_TABORG = "TABORG";
 
     private String numloc;
     private String taborg;

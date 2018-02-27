@@ -4,6 +4,14 @@ public class Funcionario {
 
     public static final String TABELA = "R034FUN";
     public static final String CAMPOS = "NUMEMP,CODFIL,TABORG,NUMLOC,TIPCOL,NUMCAD,NOMFUN,NUMCPF";
+    public static final String CAMPO_NUMEMP = "NUMEMP";
+    public static final String CAMPO_CODFIL = "CODFIL";
+    public static final String CAMPO_TABORG = "TABORG";
+    public static final String CAMPO_NUMLOC = "NUMLOC";
+    public static final String CAMPO_TIPCOL = "TIPCOL";
+    public static final String CAMPO_NUMCAD = "NUMCAD";
+    public static final String CAMPO_NOMFUN = "NOMFUN";
+    public static final String CAMPO_NUMCPF = "NUMCPF";
 
 
     private String numcad;
