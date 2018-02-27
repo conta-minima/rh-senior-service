@@ -2,7 +2,7 @@
    <soapenv:Header/>
    <soapenv:Body>
       <ser:ConsultarTabelas>
-         <user>{{login}}</user>
+         <user>{{usuario}}</user>
          <password>{{senha}}</password>
          <encryption>{{encriptacao}}</encryption>
          <parameters>

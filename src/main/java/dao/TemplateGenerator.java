@@ -21,7 +21,7 @@ public class TemplateGenerator {
 
         public void setTemplate(InputStream template) throws IOException{
             StringBuilder sb = new StringBuilder();
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            BufferedReader br = new BufferedReader(new InputStreamReader(template));
 
             String line;
             while((line = br.readLine()) != null) {
