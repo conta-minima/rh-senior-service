@@ -4,6 +4,7 @@ package config;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 import javax.ws.rs.NotFoundException;
@@ -35,27 +36,11 @@ public class PropertiesReader {
 	
 	private void readProperties() throws NotFoundException{
 		try {
-			//search the properties location (from parameter or current directory)
-			
 			String arquivo = System.getProperty("properties.file");
-			if (arquivo == null) {
-				//current directory
-				File f = new File(System.getProperty("java.class.path"));
-				File dir = f.getAbsoluteFile().getParentFile();
-				String path = dir.toString();
-				arquivo = path + File.separator + "ad-auth-service.properties";
-			}
-			
 			LOGGER.info("Properties File: " + arquivo);
-			
-			File f = new File ( arquivo );
-			if (f.exists()){
-				properties = new Properties();
-				properties.load(new FileInputStream(f));
-			}
-			else{
-				throw new NotFoundException("Properties File NOT found ["+f.getAbsolutePath()+"]");
-			}
+			InputStream inputStream = arquivo != null ? new FileInputStream(new File (arquivo)) : this.getClass().getResourceAsStream("rh-senior-service.properties");
+			properties = new Properties();
+			properties.load(inputStream);
 		} catch (IOException e) {
 			throw new NotFoundException("Error Reading Properties File: ["+e.getMessage()+"]", e);
 		}
