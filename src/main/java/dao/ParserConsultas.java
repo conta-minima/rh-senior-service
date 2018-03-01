@@ -1,6 +1,7 @@
 package dao;
 
 import dto.*;
+import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -9,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParserConsultas {
+
+    private static final int TAMANHO_PADRAO_CPF = 11;
 
     public List<Funcionario> parseFuncionarios(String response, Empresa empresa) {
         Document document = Jsoup.parse(response);
@@ -38,7 +41,13 @@ public class ParserConsultas {
                     funcionario.setNomfun(nome.nextElementSibling().text());
                 }
                 if (Funcionario.CAMPO_NUMCPF.equals(nome.text())) {
-                    funcionario.setNumcpf(nome.nextElementSibling().text());
+                    String cpf = nome.nextElementSibling().text();
+                    if(StringUtils.isNotBlank(cpf)){
+                        if(cpf.trim().length() < TAMANHO_PADRAO_CPF){
+                            cpf = StringUtils.leftPad(cpf.trim(), TAMANHO_PADRAO_CPF, "0");
+                        }
+                    }
+                    funcionario.setNumcpf(cpf);
                 }
             }
             if (funcionario.getNumemp() == null) {
