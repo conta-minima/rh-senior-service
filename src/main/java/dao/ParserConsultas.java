@@ -49,6 +49,12 @@ public class ParserConsultas {
                     }
                     funcionario.setNumcpf(cpf);
                 }
+                if (Funcionario.CAMPO_CODCAR.equals(nome.text())) {
+                    funcionario.setCodcar(nome.nextElementSibling().text());
+                }
+                if (Funcionario.CAMPO_ESTCAR.equals(nome.text())) {
+                    funcionario.setEstcar(nome.nextElementSibling().text());
+                }
             }
             if (funcionario.getNumemp() == null) {
                 funcionario.setNumemp(empresa.getNumemp());
@@ -156,4 +162,26 @@ public class ParserConsultas {
         }
         return complementos;
     }
+
+    public List<Cargo> parseCargos(String response) {
+        Document document = Jsoup.parse(response);
+        List<Cargo> cargos = new ArrayList<>();
+        for (Element resultado : document.select("resultado")) {
+            Cargo cargo = new Cargo();
+            for (Element nome : resultado.select("nome")) {
+                if (Cargo.CAMPO_CODCAR.equals(nome.text())) {
+                    cargo.setCodcar(nome.nextElementSibling().text());
+                }
+                if (Cargo.CAMPO_ESTCAR.equals(nome.text())) {
+                    cargo.setEstcar(nome.nextElementSibling().text());
+                }
+                if (Cargo.CAMPO_TITCAR.equals(nome.text())) {
+                    cargo.setTitcar(nome.nextElementSibling().text());
+                }
+            }
+            cargos.add(cargo);
+        }
+        return cargos;
+    }
+
 }

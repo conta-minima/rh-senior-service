@@ -34,6 +34,8 @@ public class ColaboradorDAO {
         List<Filial> filiais = parser.parseFiliais(response);
         response = consultar(url, dataProvider, Setor.TABELA, Setor.CAMPOS);
         List<Setor> setores = parser.parseSetores(response);
+        response = consultar(url, dataProvider, Cargo.TABELA, Cargo.CAMPOS);
+        List<Cargo> cargos = parser.parseCargos(response);
 
         List<Funcionario> funcionarios = new ArrayList<>();
         for (TipoColaborador tipoColaborador : TipoColaborador.values()) {
@@ -92,9 +94,9 @@ public class ColaboradorDAO {
                 }
             }
 
-            for (Setor setor : setores) {
-                if (funcionario.getTaborg().equals(setor.getTaborg()) && funcionario.getNumloc().equals(setor.getNumloc())) {
-                    colaborador.setSetor(setor.getNomloc());
+            for (Cargo cargo : cargos) {
+                if (funcionario.getEstcar().equals(cargo.getEstcar()) && funcionario.getCodcar().equals(cargo.getCodcar())) {
+                    colaborador.setCargo(cargo.getTitcar());
                     break;
                 }
             }
