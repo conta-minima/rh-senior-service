@@ -19,7 +19,6 @@ public class ColaboradorRepository {
 		c1.setSetor("Desenvolvimento");
 		c1.setEmail("colaborador@contaminima.com.br");
 		c1.setAtivo(true);
-		c1.setSenha("1234");
 		c1.setPabx("9876");
 		c1.setCargo("Analista de Sistemas");
 		c1.setCpf("12345678911");

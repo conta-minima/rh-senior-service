@@ -1,0 +1,37 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.senior.com.br">
+<soapenv:Header/>
+<soapenv:Body>
+   <ser:ConsultarTabelas>
+      <user>{{usuario}}</user>
+      <password>{{senha}}</password>
+      <encryption>{{encriptacao}}</encryption>
+      <parameters>
+         <consulta>
+            <campos>{{campos}}</campos>
+            <filtro>
+               <campo>NUMCAD</campo>
+               <condicao>&lt;</condicao>
+               <valor>{{valorMax}}</valor>
+            </filtro>
+            <filtro>
+               <campo>NUMCAD</campo>
+               <condicao>&gt;</condicao>
+               <valor>{{valorMin}}</valor>
+            </filtro>
+            <filtro>
+               <campo>NUMEMP</campo>
+               <condicao>=</condicao>
+               <valor>{{param1}}</valor>
+            </filtro>
+            <filtro>
+               <campo>TIPCOL</campo>
+               <condicao>=</condicao>
+               <valor>{{param2}}</valor>
+            </filtro>
+            <id></id>
+            <tabela>{{tabela}}</tabela>
+         </consulta>
+      </parameters>
+   </ser:ConsultarTabelas>
+</soapenv:Body>
+</soapenv:Envelope>

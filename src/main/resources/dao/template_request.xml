@@ -1,0 +1,17 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.senior.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:ConsultarTabelas>
+         <user>{{usuario}}</user>
+         <password>{{senha}}</password>
+         <encryption>{{encriptacao}}</encryption>
+         <parameters>
+            <consulta>
+               <campos>{{campos}}</campos>
+               <id></id>
+               <tabela>{{tabela}}</tabela>
+            </consulta>
+         </parameters>
+      </ser:ConsultarTabelas>
+   </soapenv:Body>
+</soapenv:Envelope>
